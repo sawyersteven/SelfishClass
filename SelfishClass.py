@@ -1,4 +1,4 @@
-def selfishclass(cls):
+def selfish(cls):
 
     class Wrap(cls):
         def __init__(self, *args, **kwargs):

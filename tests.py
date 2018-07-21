@@ -1,5 +1,5 @@
 import unittest
-from SelfishClass import selfishclass
+from SelfishClass import selfish
 
 ''' Define args here for convenience '''
 arg1 = 12
@@ -9,7 +9,7 @@ kwarg_int = 8675309
 kwarg_list = ['this', 'that', 'the other']
 
 
-@selfishclass
+@selfish
 class TestClass(object):
     def __init__(self, arg1, arg2, kwarg_str=None, kwarg_int=None, kwarg_list=None):
         ''' Test class for handling args, kwargs, and init
