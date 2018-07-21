@@ -7,7 +7,12 @@ def selfish(cls):
             for k, v in kwargs.items():
                 setattr(self, k, v)
 
-            super(Wrap, self).__init__(*args, **kwargs)
+            super_init = super(Wrap, self).__init__
+
+            for i, a in enumerate(args):
+                setattr(self, super_init.__code__.co_varnames[i+1], a)
+
+            super_init(*args, **kwargs)
 
         def __repr__(self):
             return '{}: {}'.format(self.__class__.__name__, ', '.join('{}<{}>: {}'.format(k, type(v).__name__, v) for k, v in self.__dict__.items()))
