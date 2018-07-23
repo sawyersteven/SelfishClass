@@ -7,7 +7,7 @@ SelfishClass eliminates the need to assign variables as `self.varname` in a clas
 
 ##### Why not attrs?
 
-Attrs does a lot of things very well. SelfishClass does few things very well. Rarely do I need all of Attr's funcionality. Attrs weighs in at ~100kb. SelfishClass is less than 1kb. In the words of the great philopsher Kevin Malone, `Me think, why waste time say lot word, when few word do trick.`
+Attrs does a lot of things very well. SelfishClass does a few things very well. Rarely do I need all of Attr's funcionality. Attrs weighs in at ~100kb. SelfishClass is less than 1kb. In the words of the great philopsher Kevin Malone, `Me think, why waste time say lot word, when few word do trick.`
 
 ##### Why not dataclasses?
 Dataclasses requires python 3.7, which may not be an option in some environments. Dataclasses require re-defining `__init__` methods as `__post_init__`, which can feel unintuitive and may require rewriting your classes. SelfishClass only requires that you insert the decorator.
@@ -21,15 +21,15 @@ Install via pip with `pip install SelfishClass`
 SelfishClass provides a simple class decorator that requires minimal or no change to your existing class definition.
 
     from SelfishClass import selfish
-    
+
     @selfish
     class Teacher(object):
         def __init__(self, name, id, department=None):
             pass
-            
+
     stan = Teacher('Stan', 445, department='Math')
-    
+
     print(stan)
     >> Teacher: department<str>: Math, id<int>: 445, name<str>: Stan
-    
+
 All vars are accessible in `__init__` as both instance variables and local variable. For instance, in `__init__` we can refer to `name` as both `name` and `self.name`.
