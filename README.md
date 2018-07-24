@@ -33,3 +33,23 @@ SelfishClass provides a simple class decorator that requires minimal or no chang
     >> Teacher: department<str>: Math, id<int>: 445, name<str>: Stan
 
 All vars are accessible in `__init__` as both instance variables and local variable. For instance, in `__init__` we can refer to `name` as both `name` and `self.name`.
+
+You may specify certain arguments to ignore if you do not want them to be assigned as instance vars. This is accomplished by using the decorator as such:
+    
+    # All positional args will be ignored by selfish
+    @selfish(args=False)
+    class Teacher(object):
+        def __init__(self, name, id, department=None):
+            pass
+            
+    # All kwargs will be ignored by selfish
+    @selfish(kwargs=False)
+    class Teacher(object):
+        def __init__(self, name, id, department=None):
+            pass
+            
+    # Only id will be ignored by selfish
+    @selfish(ignore=['id'])
+    class Teacher(object):
+        def __init__(self, name, id, department=None):
+            pass
