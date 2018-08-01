@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="SelfishClass",
-    version="0.2",
+    version="0.21",
     author="SawyerSteven",
     author_email="sawyerstevenk@gmail.com",
     description="A minimal alternative to dataclasses and python-attrs",

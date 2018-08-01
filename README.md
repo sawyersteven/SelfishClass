@@ -7,7 +7,7 @@ SelfishClass eliminates the need to assign variables as `self.varname` in a clas
 
 ##### Why not attrs?
 
-Attrs does a lot of things very well. SelfishClass does a few things very well. Rarely do I need all of Attr's funcionality. Attrs weighs in at ~100kb. SelfishClass is less than 1kb. In the words of the great philopsher Kevin Malone, `Me think, why waste time say lot word, when few word do trick.`
+Attrs does a lot of things very well. SelfishClass does a few things very well. Rarely do I need all of Attr's functionality. Attrs weighs in at ~100kb. SelfishClass is less than 1kb. In the words of the great philosopher Kevin Malone, `Me think, why waste time say lot word, when few word do trick.`
 
 ##### Why not dataclasses?
 Dataclasses requires python 3.7, which may not be an option in some environments. Dataclasses require re-defining `__init__` methods as `__post_init__`, which can feel unintuitive and may require rewriting your classes. SelfishClass only requires that you insert the decorator.
